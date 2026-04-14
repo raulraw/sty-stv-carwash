@@ -1,48 +1,18 @@
 'use client';
 
-import Aurora from './components/animations/Aurora';
 import LiquidGlassNavbar from './components/LiquidGlassNavbar';
+import HeroSection from './components/HeroSection';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
-      
-      {/* Aurora Background - rămâne fix pe toată pagina */}
-      <Aurora 
-        colorStops={['#e30613', '#ff5e00', '#8b00ff']} 
-        amplitude={1.3} 
-        blend={0.65} 
-        speed={0.9} 
-      />
 
-      {/* Navbar Liquid Glass */}
       <LiquidGlassNavbar />
 
-      {/* HERO SECTION */}
-      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-6">
-            STY &amp; STV <span className="text-[#e30613]">CARWASH</span>
-          </h1>
-          <p className="text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto">
-            De peste 20 de ani ne dedicăm constant îmbunătățirii experiențelor clienților noștri.
-          </p>
-          <p className="mt-4 text-xl text-white/70">
-            Spălătorie auto hibrid modernă din Craiova • 5 posturi performante • Self-wash &amp; Serviciu complet cu personal dedicat
-          </p>
+      {/* HERO SECTION – acum ca componentă separată */}
+      <HeroSection />
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#e30613] hover:bg-red-700 transition-all px-10 py-4 rounded-full text-lg font-semibold">
-              Spală-ți mașina acum
-            </button>
-            <button className="border border-white/60 hover:bg-white/10 transition-all px-10 py-4 rounded-full text-lg font-semibold">
-              Vezi serviciile noastre
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* SECȚIUNI RANDOM PENTRU SCROLL */}
+      {/* SECȚIUNI RANDOM PENTRU SCROLL – rămân neschimbate */}
       
       {/* Secțiunea 1 - Experiența noastră */}
       <section className="relative z-10 py-24 bg-black/70 backdrop-blur-sm">
@@ -123,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Secțiunea Footer */}
+      {/* Footer */}
       <footer className="relative z-10 py-20 border-t border-white/10 bg-black/80">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-2xl font-medium mb-2">Sty &amp; Stv Carwash</p>
