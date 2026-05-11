@@ -66,7 +66,7 @@ export default function PersonalServiceSection() {
                 </div>
                 <div className="flex justify-between">
                   <span>Sâmbătă</span>
-                  <span className="font-semibold text-white">08:00 – 16:00</span>
+                  <span className="font-semibold text-white">08:00 – 15:00</span>
                 </div>
                 <div className="flex justify-between text-white/60">
                   <span>Duminică</span>
