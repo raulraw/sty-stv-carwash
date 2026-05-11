@@ -231,6 +231,8 @@ export default function WashProgramsSection() {
       className="relative z-10 py-28 bg-black/70 backdrop-blur-sm overflow-hidden"
       aria-labelledby="wash-programs-title"
     >
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent pointer-events-none z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none z-20" />
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}

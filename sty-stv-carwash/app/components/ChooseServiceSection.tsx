@@ -10,10 +10,12 @@ export default function ChooseServiceSection() {
       id="servicii" 
       className="relative z-10 py-28 overflow-hidden"
     >
-      {/* Background Image cu overlay elegant */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent pointer-events-none z-20" />
+      
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/1.jpg"
+          src="/images/servicii.jpg"
           alt="Spălătorie auto Sty & Stv Carwash Craiova"
           fill
           className="object-cover"
@@ -23,7 +25,7 @@ export default function ChooseServiceSection() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Titlu cu efect Blur */}
+        {/* Titlu */}
         <div className="text-center mb-16">
           <BlurText
             text="Alege cum dorești să-ți răsfeți mașina"
@@ -36,7 +38,7 @@ export default function ChooseServiceSection() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
-          {/* Card Self-Wash */}
+          {/* Card Self-Wash - BUTON ALB */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,16 +61,18 @@ export default function ChooseServiceSection() {
             </div>
 
             <div className="mt-10">
-              <a 
+              <motion.a 
                 href="#selfwash"
-                className="inline-flex items-center text-sm uppercase tracking-[0.125em] font-semibold text-white/80 hover:text-white border-b border-white/30 pb-1 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="relative px-10 py-4 rounded-full bg-white/10 backdrop-blur-2xl border border-white/40 text-white font-semibold text-base hover:bg-white/20 hover:border-white/60 active:scale-95 transition-all duration-300 shadow-lg shadow-white/10 inline-flex items-center justify-center gap-3 w-full sm:w-auto"
               >
-                Descoperă Self-Wash →
-              </a>
+                <span className="relative z-10">Descoperă Self-Wash</span>
+              </motion.a>
             </div>
           </motion.div>
 
-          {/* Card Serviciu Complet cu Personal */}
+          {/* Card Serviciu Complet cu Personal - BUTON ROȘU */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +83,7 @@ export default function ChooseServiceSection() {
                        transition-all duration-500 shadow-xl shadow-black/30 hover:shadow-2xl hover:shadow-black/40 
                        hover:-translate-y-2 p-10 sm:p-12 relative"
           >
-            {/* Badge "Recomandat" cu pulsatie */}
+            {/* Badge Recomandat */}
             <motion.div 
               className="absolute top-7 right-7 bg-[#e30613] text-white text-xs font-bold px-5 py-1.5 rounded-full tracking-widest shadow-lg"
               animate={{ 
@@ -111,20 +115,21 @@ export default function ChooseServiceSection() {
             </div>
 
             <div className="mt-10">
-              <a 
-                href="#contact"
-                className="inline-flex items-center text-sm uppercase tracking-[0.125em] font-semibold text-white/80 hover:text-white border-b border-white/30 pb-1 transition-colors"
+              <motion.a 
+                href="#serviciu-complet"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="relative px-10 py-4 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-base hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20 inline-flex items-center justify-center gap-3 w-full sm:w-auto"
               >
-                Rezervă acum →
-              </a>
+                <span className="relative z-10">Descoperă serviciile personalului</span>
+              </motion.a>
             </div>
           </motion.div>
 
         </div>
       </div>
 
-      {/* Subtil gradient jos pentru tranziție lină */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none z-20" />
     </section>
   );
 }
