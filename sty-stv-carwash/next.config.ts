@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',           // ← asta e important pentru Netlify static
+  trailingSlash: true,        // recomandat
+  images: {
+    unoptimized: true         // obligatoriu când folosești output: 'export'
+  },
 };
 
-export default nextConfig;
+export default nextConfig
