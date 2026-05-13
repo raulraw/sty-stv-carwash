@@ -55,14 +55,14 @@ export default function ChooseServiceSection() {
                 Self-Wash
               </h3>
               <p className="text-white/70 text-[15.5px] leading-relaxed">
-                4 posturi moderne cu echipamente de ultimă generație. 
+                5 posturi moderne cu echipamente de ultimă generație. 
                 Tu controlezi procesul complet – rapid, economic și satisfăcător.
               </p>
             </div>
 
             <div className="mt-10">
               <motion.a 
-                href="#selfwash"
+                href="#programe"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="relative px-10 py-4 rounded-full bg-white/10 backdrop-blur-2xl border border-white/40 text-white font-semibold text-base hover:bg-white/20 hover:border-white/60 active:scale-95 transition-all duration-300 shadow-lg shadow-white/10 inline-flex items-center justify-center gap-3 w-full sm:w-auto"

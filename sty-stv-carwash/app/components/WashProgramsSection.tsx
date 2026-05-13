@@ -37,7 +37,7 @@ const PROGRAMS = [
   {
     id: 3,
     Icon: Icons.Lanta,
-    name: 'Lanță cu Spumă',
+    name: 'Lance cu Spumă',
     description: 'Jet puternic cu spumă activă aplicat direct pe suprafețe, asigurând o curățare uniformă și profundă pe toată caroseria.',
     seconds: 90,
     accent: '#a78bfa',

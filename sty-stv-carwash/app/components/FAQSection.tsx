@@ -9,13 +9,13 @@ const FAQS = [
     id: 1,
     question: 'Care este diferența dintre Self-Wash și Serviciul Complet cu Personal?',
     answer:
-      'La Self-Wash ai control total — tu operezi echipamentele la unul din cele 4 posturi moderne, în ritmul tău. Serviciul Complet cu Personal înseamnă că echipa noastră se ocupă integral de mașina ta: spălare exterioară, curățare interior, jante, tapițerie și finisaje premium. Ideal dacă vrei confort maxim și rezultate de detaliu.',
+      'La Self-Wash ai control total — tu operezi echipamentele la unul din cele 5 posturi moderne, în ritmul tău. Serviciul Complet cu Personal înseamnă că echipa noastră se ocupă integral de mașina ta: spălare exterioară, curățare interior, jante, tapițerie și finisaje premium. Ideal dacă vrei confort maxim și rezultate de detaliu.',
   },
   {
     id: 2,
     question: 'Câte programe are un post Self-Wash și ce includ?',
     answer:
-      'Fiecare post dispune de 7 programe selectabile: Degresant, Super Spumă, Lanță cu Spumă, Spălare cu Presiune, Ceruire, Osmoză și Stop. Programul Stop este o pauză netaxabilă de 60 de secunde, disponibilă o singură dată per sesiune, ca să poți inspecta rezultatul.',
+      'Fiecare post dispune de 7 programe selectabile: Degresant, Super Spumă, Lance cu Spumă, Spălare cu Presiune, Ceruire, Osmoză și Stop. Programul Stop este o pauză netaxabilă de 60 de secunde, disponibilă o singură dată per sesiune.',
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const FAQS = [
     id: 4,
     question: 'Care este programul de lucru al serviciului cu personal?',
     answer:
-      'Echipa noastră este disponibilă Luni–Vineri între 08:00–17:00 și Sâmbătă între 08:00–16:00. Duminica suntem închiși. Ultima intrare se acceptă cu 30 de minute înainte de închidere. Posturile Self-Wash au un program extins — verifică afișajul la locație.',
+      'Echipa noastră este disponibilă Luni–Vineri între 08:00–17:00 și Sâmbătă între 08:00–15:00. Duminica suntem închiși. Ultima intrare se acceptă cu 30 de minute înainte de închidere. Posturile Self-Wash au un program extins — verifică afișajul la locație.',
   },
   {
     id: 5,

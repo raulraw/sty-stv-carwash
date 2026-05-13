@@ -13,15 +13,10 @@ const useMedia = (queries: string[], values: number[], defaultValue: number): nu
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-
     const handler = () => setValue(get());
-    
     const mqls = queries.map(q => window.matchMedia(q));
     mqls.forEach(mql => mql.addEventListener('change', handler));
-
-    return () => {
-      mqls.forEach(mql => mql.removeEventListener('change', handler));
-    };
+    return () => mqls.forEach(mql => mql.removeEventListener('change', handler));
   }, [queries, values, defaultValue]);
 
   return value;
@@ -44,9 +39,11 @@ const useMeasure = <T extends HTMLElement>() => {
   return [ref, size] as const;
 };
 
-const preloadImages = async (urls: string[]): Promise<void> => {
+// Preload only the first N images eagerly, rest lazily
+const preloadImages = async (urls: string[], eagerCount = 8): Promise<void> => {
+  const eager = urls.slice(0, eagerCount);
   await Promise.all(
-    urls.map(
+    eager.map(
       src =>
         new Promise<void>(resolve => {
           const img = new Image();
@@ -116,21 +113,15 @@ const Masonry: React.FC<MasonryProps> = ({
     }
 
     switch (direction) {
-      case 'top':
-        return { x: item.x, y: -200 };
-      case 'bottom':
-        return { x: item.x, y: window.innerHeight + 200 };
-      case 'left':
-        return { x: -200, y: item.y };
-      case 'right':
-        return { x: window.innerWidth + 200, y: item.y };
-      case 'center':
-        return {
-          x: containerRect.width / 2 - item.w / 2,
-          y: containerRect.height / 2 - item.h / 2
-        };
-      default:
-        return { x: item.x, y: item.y + 100 };
+      case 'top':    return { x: item.x, y: -200 };
+      case 'bottom': return { x: item.x, y: window.innerHeight + 200 };
+      case 'left':   return { x: -200, y: item.y };
+      case 'right':  return { x: window.innerWidth + 200, y: item.y };
+      case 'center': return {
+        x: containerRect.width / 2 - item.w / 2,
+        y: containerRect.height / 2 - item.h / 2,
+      };
+      default: return { x: item.x, y: item.y + 100 };
     }
   };
 
@@ -138,22 +129,26 @@ const Masonry: React.FC<MasonryProps> = ({
     preloadImages(items.map(i => i.img)).then(() => setImagesReady(true));
   }, [items]);
 
-  const grid = useMemo<GridItem[]>(() => {
-    if (!width) return [];
-    const colHeights = new Array(columns).fill(0);
+  // Grid layout — returns items + total container height
+  const { grid, totalHeight } = useMemo<{ grid: GridItem[]; totalHeight: number }>(() => {
+    if (!width) return { grid: [], totalHeight: 0 };
+
     const gap = 16;
     const totalGaps = (columns - 1) * gap;
     const columnWidth = (width - totalGaps) / columns;
+    const colHeights = new Array(columns).fill(0);
 
-    return items.map(child => {
+    const grid = items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = col * (columnWidth + gap);
-      const height = child.height / 2;
+      const h = child.height / 2;
       const y = colHeights[col];
-
-      colHeights[col] += height + gap;
-      return { ...child, x, y, w: columnWidth, h: height };
+      colHeights[col] += h + gap;
+      return { ...child, x, y, w: columnWidth, h };
     });
+
+    const totalHeight = Math.max(...colHeights);
+    return { grid, totalHeight };
   }, [columns, items, width]);
 
   const hasMounted = useRef(false);
@@ -175,7 +170,7 @@ const Masonry: React.FC<MasonryProps> = ({
             y: start.y,
             width: item.w,
             height: item.h,
-            ...(blurToFocus && { filter: 'blur(10px)' })
+            ...(blurToFocus && { filter: 'blur(10px)' }),
           },
           {
             opacity: 1,
@@ -183,47 +178,35 @@ const Masonry: React.FC<MasonryProps> = ({
             ...(blurToFocus && { filter: 'blur(0px)' }),
             duration: 0.8,
             ease: 'power3.out',
-            delay: index * stagger
+            delay: index * stagger,
           }
         );
       } else {
-        gsap.to(selector, {
-          ...animProps,
-          duration,
-          ease,
-          overwrite: 'auto'
-        });
+        gsap.to(selector, { ...animProps, duration, ease, overwrite: 'auto' });
       }
     });
 
     hasMounted.current = true;
   }, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease, width]);
 
-  const handleMouseEnter = (id: string, element: HTMLElement) => {
+  const handleMouseEnter = (id: string) => {
     if (scaleOnHover) {
-      gsap.to(`[data-key="${id}"]`, {
-        scale: hoverScale,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
+      gsap.to(`[data-key="${id}"]`, { scale: hoverScale, duration: 0.3, ease: 'power2.out' });
     }
   };
 
   const handleMouseLeave = (id: string) => {
     if (scaleOnHover) {
-      gsap.to(`[data-key="${id}"]`, {
-        scale: 1,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
+      gsap.to(`[data-key="${id}"]`, { scale: 1, duration: 0.3, ease: 'power2.out' });
     }
   };
 
   return (
-    <div 
-      ref={containerRef} 
-      className="relative w-full h-full min-h-[700px]"
-      style={{ willChange: 'contents' }}
+    <div
+      ref={containerRef}
+      className="relative w-full"
+      // Height is driven dynamically by the computed grid — no hardcoded min-h
+      style={{ height: totalHeight > 0 ? totalHeight : undefined, willChange: 'contents' }}
     >
       {grid.map(item => (
         <div
@@ -232,16 +215,27 @@ const Masonry: React.FC<MasonryProps> = ({
           className="absolute box-content cursor-pointer group"
           style={{ willChange: 'transform, width, height, opacity' }}
           onClick={() => onImageClick?.(items.findIndex(i => i.id === item.id))}
-          onMouseEnter={e => handleMouseEnter(item.id, e.currentTarget)}
+          onMouseEnter={() => handleMouseEnter(item.id)}
           onMouseLeave={() => handleMouseLeave(item.id)}
         >
           <div
-            className="relative w-full h-full bg-cover bg-center rounded-2xl overflow-hidden 
-                       shadow-2xl shadow-black/60 transition-all duration-500 
+            className="relative w-full h-full bg-cover bg-center rounded-2xl overflow-hidden
+                       shadow-2xl shadow-black/60 transition-all duration-500
                        group-hover:shadow-3xl group-hover:-translate-y-1"
             style={{ backgroundImage: `url(${item.img})` }}
           >
-            {/* Overlay subtil la hover */}
+            {/* Lazy-load hint for browser via a hidden <img> with loading="lazy" */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={item.img}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              className="absolute inset-0 w-full h-full opacity-0 pointer-events-none"
+              aria-hidden="true"
+            />
+            {/* Subtle hover overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         </div>
