@@ -32,7 +32,7 @@ export default function HeroSection() {
         {/* PARTEA STÂNGĂ – Titlu + Texte */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           
-          <div className="mb-6 flex flex-wrap items-end justify-center lg:justify-start gap-x-2 gap-y-1">
+                    <div className="mb-6 flex flex-wrap items-end justify-center lg:justify-start gap-x-2 gap-y-1">
             <BlurText
               text="ST"
               delay={200}
@@ -47,7 +47,9 @@ export default function HeroSection() {
               direction="top"
               className="text-[5.2rem] md:text-[6.5rem] lg:text-[7.2rem] font-extrabold tracking-[-0.05em] leading-none text-[#e30613]"
             />
-            <span className="text-[5.2rem] md:text-[6.5rem] lg:text-[7.2rem] font-extrabold tracking-[-0.05em] leading-none text-[#e30613]"> &amp; </span>
+            <span className="text-[5.2rem] md:text-[6.5rem] lg:text-[7.2rem] font-extrabold tracking-[-0.05em] leading-none text-white/40">
+              &amp;
+            </span>
             <BlurText
               text="ST"
               delay={440}

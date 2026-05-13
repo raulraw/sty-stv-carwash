@@ -50,11 +50,11 @@ export default function LiquidGlassNavbar() {
   };
 
   const navLinks = [
-    { href: '#servicii', label: 'Servicii',  icon: '🧼' },
-    { href: '#selfwash', label: 'Self-Wash', icon: '✋' },
-    { href: '#preturi',  label: 'Prețuri',   icon: '💰' },
-    { href: '#galerie',  label: 'Galerie',   icon: '📸' },
-    { href: '#contact',  label: 'Contact',   icon: '📍' },
+    { href: '#servicii',         label: 'Servicii',    icon: '🧼' },
+    { href: '#programe',         label: 'Self-Wash',   icon: '✋' },
+    { href: '#serviciu-complet', label: 'Personal',    icon: '🧑‍🔧' },
+    { href: '#galerie',          label: 'Galerie',     icon: '📸' },
+    { href: '#contact',          label: 'Contact',     icon: '📍' },
   ];
 
   return (

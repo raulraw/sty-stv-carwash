@@ -7,6 +7,7 @@ import ChooseServiceSection from './components/ChooseServiceSection';
 import PersonalServiceSection from './components/PersonalServiceSection';
 import FAQSection from './components/FAQSection';
 import ReviewsSection from './components/ReviewsSection';
+import Footer from './components/Footer';
 
 
 export default function Home() {
@@ -19,6 +20,8 @@ export default function Home() {
       <PersonalServiceSection />
       <FAQSection />
       <ReviewsSection />
+      <Footer />
+
     </main>
   );
 }
