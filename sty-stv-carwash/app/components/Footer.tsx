@@ -90,13 +90,13 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-6 text-lg">Navigare rapidă</h4>
             <ul className="space-y-3 text-white/70">
               {[
-                { label: 'Servicii', href: '#servicii' },
-                { label: 'Self Wash', href: '#programe' },
-                { label: 'Servicii Personal', href: '#serviciu-complet' },
-                { label: 'FAQ', href: '#faq' },
-                { label: 'Recenzii', href: '#recenzii' },
-                { label: 'Galerie', href: '#galerie' },
-                { label: 'Locație', href: '#contact' },
+                { label: 'Servicii', href: '/#servicii' },
+                { label: 'Self Wash', href: '/#programe' },
+                { label: 'Servicii Personal', href: '/#serviciu-complet' },
+                { label: 'FAQ', href: '/#faq' },
+                { label: 'Recenzii', href: '/#recenzii' },
+                { label: 'Galerie', href: '/galerie' },
+                { label: 'Locație', href: '/contact' },
               ].map((link, i) => (
                 <motion.li 
                   key={i}

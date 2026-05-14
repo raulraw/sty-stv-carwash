@@ -13,7 +13,7 @@ export default function PersonalServiceSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/2.jpg"
+          src="/images/37.webp"
           alt="Serviciu Complet cu Personal Sty & Stv Carwash Craiova"
           fill
           className="object-cover"
@@ -144,11 +144,11 @@ export default function PersonalServiceSection() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <a 
-                    href="#contact"
+                    href="/contact"
                     className="relative px-10 py-4 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-base hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20 inline-flex items-center justify-center gap-3"
                   >
                     <span className="text-2xl">📞</span>
-                    <span className="relative z-10">Informații suplimentare</span>
+                    <span className="relative z-10 text-center">Informații suplimentare</span>
                   </a>
                 </motion.div>
                 <p className="text-center text-white/50 text-sm mt-4">Răspundem rapid la telefon sau WhatsApp</p>

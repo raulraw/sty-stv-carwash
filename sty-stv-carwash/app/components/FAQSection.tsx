@@ -271,7 +271,7 @@ export default function FAQSection() {
               Nu ai găsit răspunsul?
             </p>
             <a
-              href="#contact"
+              href="/contact"
               className="relative px-10 py-4 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-base hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20 inline-flex items-center justify-center gap-3"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >

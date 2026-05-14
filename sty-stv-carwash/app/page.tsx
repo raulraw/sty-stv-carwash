@@ -8,7 +8,7 @@ import PersonalServiceSection from './components/PersonalServiceSection';
 import FAQSection from './components/FAQSection';
 import ReviewsSection from './components/ReviewsSection';
 import Footer from './components/Footer';
-
+import ReviewNudge from './components/ReviewNudge';
 
 export default function Home() {
   return (
@@ -20,7 +20,9 @@ export default function Home() {
       <PersonalServiceSection />
       <FAQSection />
       <ReviewsSection />
+      <ReviewNudge />
       <Footer />
+      
 
     </main>
   );

@@ -34,10 +34,27 @@ const galleryItems = [
   { id: "22", img: "/images/22.webp", url: "#", height: 580 },
   { id: "23", img: "/images/23.webp", url: "#", height: 430 },
   { id: "24", img: "/images/24.webp", url: "#", height: 690 },
+  { id: "25", img: "/images/25.webp", url: "#", height: 470 },
+  { id: "26", img: "/images/26.webp", url: "#", height: 540 },
+  { id: "27", img: "/images/27.webp", url: "#", height: 600 },
+  { id: "28", img: "/images/28.webp", url: "#", height: 450 },
+  { id: "29", img: "/images/29.webp", url: "#", height: 520 },
+  { id: "30", img: "/images/30.webp", url: "#", height: 640 },
+  { id: "31", img: "/images/31.webp", url: "#", height: 520 },
+  { id: "32", img: "/images/32.webp", url: "#", height: 580 },
+  { id: "33", img: "/images/33.webp", url: "#", height: 430 },
+  { id: "34", img: "/images/34.webp", url: "#", height: 690 },
+  { id: "35", img: "/images/35.webp", url: "#", height: 470 },
+  { id: "36", img: "/images/36.webp", url: "#", height: 540 },
+  { id: "37", img: "/images/37.webp", url: "#", height: 600 },
+  { id: "38", img: "/images/38.webp", url: "#", height: 450 },
+  { id: "39", img: "/images/39.webp", url: "#", height: 520 },
+  { id: "40", img: "/images/40.webp", url: "#", height: 640 },
 ];
 
 const TOTAL = galleryItems.length;
 const SWIPE_THRESHOLD = 50;
+
 
 // ─── Desktop Nav Button ───────────────────────────────────────────────────────
 function NavButton({ direction, onClick }: { direction: 'prev' | 'next'; onClick: () => void }) {

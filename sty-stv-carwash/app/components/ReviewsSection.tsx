@@ -611,7 +611,7 @@ export default function ReviewsSection() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('/images/5.webp')",
+            backgroundImage: "url('/images/29.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

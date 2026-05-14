@@ -15,7 +15,7 @@ export default function ChooseServiceSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/servicii.jpg"
+          src="/images/12.webp"
           alt="Spălătorie auto Sty & Stv Carwash Craiova"
           fill
           className="object-cover"
@@ -121,7 +121,7 @@ export default function ChooseServiceSection() {
                 whileTap={{ scale: 0.98 }}
                 className="relative px-10 py-4 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-base hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20 inline-flex items-center justify-center gap-3 w-full sm:w-auto"
               >
-                <span className="relative z-10">Descoperă serviciile personalului</span>
+                <span className="relative z-10 text-center">Descoperă serviciile personalului</span>
               </motion.a>
             </div>
           </motion.div>

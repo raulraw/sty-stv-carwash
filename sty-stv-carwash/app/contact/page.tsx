@@ -15,7 +15,7 @@ export default function ContactPage() {
       <section className="relative h-[52vh] flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/18.webp"
+            src="/images/11.webp"
             alt="Sty & Stv Carwash Craiova - Contact"
             fill
             className="object-cover"
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-white/50 text-xs tracking-widest mb-2">EMAIL</p>
                   <a href="mailto:contact@sty-stv.ro" className="text-lg font-semibold hover:text-[#e30613] transition-colors">
-                    contact@sty-stv.ro
+                    prodpel24@gmail.com
                   </a>
                 </div>
               </div>
@@ -174,14 +174,6 @@ export default function ContactPage() {
           {/* COLOANA 2 — Hartă cu filtru dark CSS */}
           <div className="flex flex-col">
             <div className="flex-1 rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative min-h-[680px]">
-              {/*
-                Tehnica: filter CSS invert(92%) + hue-rotate(180deg) transformă harta
-                normală în dark mode fără API key. Culorile se inversează — verdele
-                parcurilor devine mov, albastrul apei devine portocaliu, iar drumurile
-                devin deschise pe fundal închis. hue-rotate(180deg) rotește paleta
-                astfel încât drumurile prind o nuanță roșiatică/portocalie, apropiată
-                de brandul #e30613.
-              */}
               <div
                 className="absolute inset-0"
                 style={{
@@ -221,12 +213,12 @@ export default function ContactPage() {
               <h3 className="text-[#e30613] font-bold tracking-[3px] text-sm mb-5 relative z-10">DATE FISCALE</h3>
               <div className="space-y-3 text-[13.5px] relative z-10">
                 {[
-                  ["Denumire completă", "STY & STV CARWASH SRL"],
-                  ["CUI", "ROxxxxxxxx"],
-                  ["Nr. Reg. Comerțului", "J16/xxxx/2020"],
+                  ["Denumire completă", "PRODPEL S.R.L"],
+                  ["CUI", "RO15764987"],
+                  ["Nr. Reg. Comerțului", "J16/1418/24.03.2003"],
                   ["Adresă sediu", "Str. Câmpului Nr. 2, Craiova, Dolj"],
                   ["Telefon", "0742 488 300 / 0745 568 011"],
-                  ["Email", "contact@sty-stv.ro"],
+                  ["Email", "prodpel24@gmail.com"], 
                 ].map(([label, value]) => (
                   <div key={label} className="flex justify-between items-baseline gap-4 pb-3 border-b border-white/[0.08] last:border-b-0">
                     <span className="text-white/50 flex-shrink-0 whitespace-nowrap">{label}</span>

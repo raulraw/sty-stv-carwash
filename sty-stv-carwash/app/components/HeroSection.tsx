@@ -101,22 +101,27 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col gap-3 w-full max-w-xs">
-            <motion.button
+            <motion.a
+              href="https://www.google.com/maps/place/Spalatorie+Auto+Self+Service+Sty%26Stv/@44.3187107,23.8195065,13z/data=!4m10!1m2!2m1!1sSty+Stv+Carwash+Craiova!3m6!1s0x4752d7bbc36adac5:0xd9dce63f77c4e911!8m2!3d44.3186197!4d23.8284993!15sChdTdHkgU3R2IENhcndhc2ggQ3JhaW92YVoZIhdzdHkgc3R2IGNhcndhc2ggY3JhaW92YZIBFXNlbGZfc2VydmljZV9jYXJfd2FzaJoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQycFNkVkZyTlVkalJGWmFZVmhTY1ZGdFVrSlRSa0p5WkhwU1MxWkdSUkFC4AEA-gEECAAQQA!16s%2Fg%2F11wnd24g5r?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
-              className="w-full px-8 py-3.5 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-sm hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20"
+              className="w-full px-8 py-3.5 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-sm hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20 inline-block text-center"
             >
               Spală-ți mașina acum
-            </motion.button>
-            <motion.button
+            </motion.a>
+
+            <motion.a
+              href="/#servicii"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.72, ease: 'easeOut' }}
-              className="w-full px-8 py-3.5 rounded-full bg-white/10 backdrop-blur-2xl border border-white/40 text-white font-semibold text-sm hover:bg-white/20 hover:border-white/60 active:scale-95 transition-all duration-300"
+              className="w-full px-8 py-3.5 rounded-full bg-white/10 backdrop-blur-2xl border border-white/40 text-white font-semibold text-sm hover:bg-white/20 hover:border-white/60 active:scale-95 transition-all duration-300 inline-block text-center"
             >
               Vezi serviciile noastre
-            </motion.button>
+            </motion.a>
           </div>
         </div>
 
@@ -162,16 +167,27 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-row gap-4">
-              <motion.div initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.05, ease: 'easeOut' }}>
-                <button className="relative px-10 py-4 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-base hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20">
-                  <span className="relative z-10">Spală-ți mașina acum</span>
-                </button>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}>
-                <button className="relative px-10 py-4 rounded-full bg-white/10 backdrop-blur-2xl border border-white/40 text-white font-semibold text-base hover:bg-white/20 hover:border-white/60 active:scale-95 transition-all duration-300">
-                  <span className="relative z-10">Vezi serviciile noastre</span>
-                </button>
-              </motion.div>
+              <motion.a
+                href="https://www.google.com/maps/place/Spalatorie+Auto+Self+Service+Sty%26Stv/@44.3187107,23.8195065,13z/data=!4m10!1m2!2m1!1sSty+Stv+Carwash+Craiova!3m6!1s0x4752d7bbc36adac5:0xd9dce63f77c4e911!8m2!3d44.3186197!4d23.8284993!15sChdTdHkgU3R2IENhcndhc2ggQ3JhaW92YVoZIhdzdHkgc3R2IGNhcndhc2ggY3JhaW92YZIBFXNlbGZfc2VydmljZV9jYXJfd2FzaJoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQycFNkVkZyTlVkalJGWmFZVmhTY1ZGdFVrSlRSa0p5WkhwU1MxWkdSUkFC4AEA-gEECAAQQA!16s%2Fg%2F11wnd24g5r?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 80 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.05, ease: 'easeOut' }}
+                className="relative px-10 py-4 rounded-full bg-[#e30613]/20 backdrop-blur-2xl border border-[#e30613]/50 text-white font-semibold text-base hover:bg-[#e30613]/30 hover:border-[#e30613]/70 active:scale-95 transition-all duration-300 shadow-lg shadow-[#e30613]/20 inline-block text-center"
+              >
+                Spală-ți mașina acum
+              </motion.a>
+
+              <motion.a
+                href="/#servicii"
+                initial={{ opacity: 0, y: 80 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+                className="relative px-10 py-4 rounded-full bg-white/10 backdrop-blur-2xl border border-white/40 text-white font-semibold text-base hover:bg-white/20 hover:border-white/60 active:scale-95 transition-all duration-300 inline-block text-center"
+              >
+                Vezi serviciile noastre
+              </motion.a>
             </div>
           </div>
 
