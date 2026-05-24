@@ -197,6 +197,8 @@ export default function Footer() {
             <img 
               src="https://blzwebsolutions.ro/wp-content/uploads/2024/04/anpc-sal.png" 
               alt="ANPC SAL" 
+              width={200}
+              height={80}
               className="w-[200px] opacity-90 group-hover:opacity-100 transition-all duration-300"
             />
           </a>
@@ -210,8 +212,10 @@ export default function Footer() {
             <img 
               src="https://blzwebsolutions.ro/wp-content/uploads/2024/04/anpc-sol.png" 
               alt="ANPC SOL" 
+              width={200}
+              height={80}
               className="w-[200px] opacity-90 group-hover:opacity-100 transition-all duration-300"
-            />
+            />  
           </a>
         </div>
       </div>

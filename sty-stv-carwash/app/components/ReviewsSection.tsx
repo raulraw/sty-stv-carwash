@@ -17,23 +17,26 @@ export default function ReviewsSection() {
   return (
     <section id="recenzii" className="relative z-10 py-28 overflow-hidden">
       {/* Background Image */}
-      <div
+      <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/29.webp')" }}
       />
       <div className="absolute inset-0 z-0 bg-black/80" />
 
-      {/* Top Blur + Gradient */}
-      <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none z-20"
-        style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)' }} />
+      {/* Top Blur */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-24 pointer-events-none z-20"
+        style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)' }} 
+      />
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent pointer-events-none z-20" />
 
-      {/* Bottom Blur + Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none z-20"
-        style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', maskImage: 'linear-gradient(to top, black 0%, transparent 100%)' }} />
+      {/* Bottom Blur */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none z-20"
+        style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', maskImage: 'linear-gradient(to top, black 0%, transparent 100%)' }} 
+      />
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none z-20" />
 
-      {/* Subtle red glow */}
       <div className="absolute inset-0 pointer-events-none z-10"
         style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 30%, rgba(227,6,19,0.04) 0%, transparent 60%)' }} />
 
