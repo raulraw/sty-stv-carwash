@@ -1,16 +1,21 @@
 'use client';
 
-import Aurora from './animations/Aurora';
+import dynamic from 'next/dynamic';
 import BlurText from './animations/BlurText';
 import RotatingText from './animations/RotatingText';
 import CountUp from './animations/CountUp';
 import { motion } from 'framer-motion';
 
+const Aurora = dynamic(() => import('./animations/Aurora'), { 
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-black/40" />
+});
+
 export default function HeroSection() {
   return (
     <section className="relative z-10 min-h-screen flex items-center px-4 sm:px-6 pt-24 sm:pt-20 pb-12 overflow-hidden">
 
-      {/* Aurora Background */}
+      {/* Aurora Background - încărcat doar client-side */}
       <div className="absolute inset-0 z-0">
         <Aurora
           topColor="#ff2929"

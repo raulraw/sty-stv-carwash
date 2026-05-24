@@ -40,7 +40,6 @@ export default function Footer() {
               Spălătorie auto hibrid modernă din Craiova cu 5 posturi performante.
             </p>
 
-            {/* Iconițe */}
             <div className="flex gap-4 mb-8">
               <motion.a
                 href="tel:+40742488300"
@@ -71,7 +70,6 @@ export default function Footer() {
               </motion.a>
             </div>
 
-            {/* Adresă */}
             <div>
               <p className="text-white/60 text-sm mb-1">📍 Adresă</p>
               <p className="text-white font-medium">Str. Câmpului Nr. 2, Craiova, Dolj</p>
@@ -85,7 +83,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2 - Navigare */}
+          {/* Col 2 - Navigare rapidă (cu link-urile legale) */}
           <div className="lg:col-span-3">
             <h4 className="font-semibold text-white mb-6 text-lg">Navigare rapidă</h4>
             <ul className="space-y-3 text-white/70">
@@ -109,6 +107,27 @@ export default function Footer() {
                   </Link>
                 </motion.li>
               ))}
+
+              {/* Link-uri legale */}
+              <motion.li 
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.2 }}
+                className="pt-3 border-t border-white/10 mt-3"
+              >
+                <Link href="/politica-confidentialitate" className="hover:text-white transition-colors flex items-center gap-2 group">
+                  <span className="text-[#e30613] group-hover:opacity-100 opacity-40">→</span>
+                  Politică de Confidențialitate
+                </Link>
+              </motion.li>
+              <motion.li 
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link href="/politica-cookies" className="hover:text-white transition-colors flex items-center gap-2 group">
+                  <span className="text-[#e30613] group-hover:opacity-100 opacity-40">→</span>
+                  Politică de Cookies
+                </Link>
+              </motion.li>
             </ul>
           </div>
 
@@ -144,7 +163,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright - revenit la varianta inițială */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
           <div>
             <p>© {currentYear} Sty & Stv Carwash. Toate drepturile rezervate.</p>
