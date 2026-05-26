@@ -2,6 +2,7 @@
 
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 const useMedia = (queries: string[], values: number[], defaultValue: number): number => {
   const get = () => {
@@ -46,7 +47,7 @@ const preloadImages = async (urls: string[], eagerCount = 8): Promise<void> => {
     eager.map(
       src =>
         new Promise<void>(resolve => {
-          const img = new Image();
+          const img = new window.Image();   // ← Aici e soluția
           img.src = src;
           img.onload = img.onerror = () => resolve();
         })
@@ -202,46 +203,43 @@ const Masonry: React.FC<MasonryProps> = ({
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full"
-      // Height is driven dynamically by the computed grid — no hardcoded min-h
-      style={{ height: totalHeight > 0 ? totalHeight : undefined, willChange: 'contents' }}
-    >
-      {grid.map(item => (
+  <div
+    ref={containerRef}
+    className="relative w-full"
+    style={{ height: totalHeight > 0 ? totalHeight : undefined, willChange: 'contents' }}
+  >
+    {grid.map((item, index) => (
+      <div
+        key={item.id}
+        data-key={item.id}
+        className="absolute box-content cursor-pointer group"
+        style={{ willChange: 'transform, width, height, opacity' }}
+        onClick={() => onImageClick?.(items.findIndex(i => i.id === item.id))}
+        onMouseEnter={() => handleMouseEnter(item.id)}
+        onMouseLeave={() => handleMouseLeave(item.id)}
+      >
         <div
-          key={item.id}
-          data-key={item.id}
-          className="absolute box-content cursor-pointer group"
-          style={{ willChange: 'transform, width, height, opacity' }}
-          onClick={() => onImageClick?.(items.findIndex(i => i.id === item.id))}
-          onMouseEnter={() => handleMouseEnter(item.id)}
-          onMouseLeave={() => handleMouseLeave(item.id)}
+          className="relative w-full h-full bg-cover bg-center rounded-2xl overflow-hidden
+                     shadow-2xl shadow-black/60 transition-all duration-500
+                     group-hover:shadow-3xl group-hover:-translate-y-1"
         >
-          <div
-            className="relative w-full h-full bg-cover bg-center rounded-2xl overflow-hidden
-                       shadow-2xl shadow-black/60 transition-all duration-500
-                       group-hover:shadow-3xl group-hover:-translate-y-1"
-            style={{ backgroundImage: `url(${item.img})` }}
-          >
-            {/* Lazy-load hint for browser via a hidden <img> with loading="lazy" */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={item.img}
-              alt=""
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-              className="absolute inset-0 w-full h-full opacity-0 pointer-events-none"
-              aria-hidden="true"
-            />
-            {/* Subtle hover overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+          <Image
+            src={item.img}
+            alt={`Sty & Stv Carwash - fotografie ${item.id}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality={75}
+            loading={index < 6 ? "eager" : "lazy"}
+          />
+
+          {/* Subtle hover overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
-      ))}
-    </div>
-  );
+      </div>
+    ))}
+  </div>
+);
 };
 
 export default Masonry;

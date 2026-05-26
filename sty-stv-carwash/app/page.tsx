@@ -9,12 +9,14 @@ import FAQSection from './components/FAQSection';
 import ReviewsSection from './components/ReviewsSection';
 import Footer from './components/Footer';
 import ReviewNudge from './components/ReviewNudge';
+import WhyChooseSection from './components/WhyChooseSection';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
       <LiquidGlassNavbar />
       <HeroSection />
+      <WhyChooseSection />
       <ChooseServiceSection />
       <WashProgramsSection />
       <PersonalServiceSection />

@@ -14,13 +14,15 @@ export default function ContactPage() {
       {/* HERO */}
       <section className="relative h-[52vh] flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/11.webp"
-            alt="Sty & Stv Carwash Craiova - Contact"
-            fill
-            className="object-cover"
-            priority
-          />
+         <Image
+          src="/images/11.webp"
+          alt="Sty & Stv Carwash Craiova - Spălătorie Auto"
+          fill
+          className="object-cover"
+          priority
+          quality={82}
+          sizes="100vw"
+        />
           <div className="absolute inset-0 bg-black/70" />
         </div>
 

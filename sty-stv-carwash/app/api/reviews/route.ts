@@ -6,6 +6,7 @@ export async function GET() {
       `?place_id=ChIJxdpqw7vXUkcREenEdz_m3Nk` +
       `&fields=reviews,rating,user_ratings_total,name` +
       `&language=ro` +
+      `&reviews_sort=newest` +
       `&key=${process.env.GOOGLE_PLACES_API_KEY}`,
     {
       next: { revalidate: 86400 },
