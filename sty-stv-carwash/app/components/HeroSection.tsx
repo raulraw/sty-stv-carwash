@@ -39,16 +39,16 @@ export default function HeroSection() {
         <div className="flex flex-col items-center text-center lg:hidden gap-8">
 
           {/* Title */}
-          <div className="flex flex-wrap items-end justify-center gap-x-2 gap-y-0">
+           <div className="flex flex-row items-end justify-center gap-x-2 flex-nowrap w-full">
             <BlurText text="ST" delay={200} animateBy="letters" direction="top"
-              className="text-[4rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-white" />
+              className="text-[2.8rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-white" />
             <BlurText text="Y" delay={320} animateBy="letters" direction="top"
-              className="text-[4rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-[#e30613]" />
-            <span className="text-[4rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-white/40">&amp;</span>
+              className="text-[2.8rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-[#e30613]" />
+            <span className="text-[2.8rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-white/40">&amp;</span>
             <BlurText text="ST" delay={440} animateBy="letters" direction="top"
-              className="text-[4rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-white" />
+              className="text-[2.8rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-white" />
             <BlurText text="V" delay={560} animateBy="letters" direction="top"
-              className="text-[4rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-[#e30613]" />
+              className="text-[2.8rem] sm:text-[5rem] font-extrabold tracking-[-0.05em] leading-none text-[#e30613]" />
           </div>
 
           {/* "Înseamnă" + RotatingText */}

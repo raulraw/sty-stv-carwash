@@ -203,7 +203,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="group relative bg-white/[0.07] backdrop-blur-2xl border border-white/[0.13] rounded-3xl p-10 flex-1 overflow-hidden min-h-[680px] flex flex-col"
+              className="group relative bg-white/[0.07] backdrop-blur-2xl border border-white/[0.13] rounded-3xl overflow-hidden min-h-[680px] flex flex-col"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-white/[0.13] via-white/[0.03] to-transparent rounded-3xl" />
               <div
@@ -211,51 +211,70 @@ export default function ContactPage() {
                 style={{ background: 'radial-gradient(ellipse at 50% 20%, rgba(227,6,19,0.18) 0%, transparent 70%)' }}
               />
 
-              {/* DATE FISCALE */}
-              <h3 className="text-[#e30613] font-bold tracking-[3px] text-sm mb-5 relative z-10">DATE FISCALE</h3>
-              <div className="space-y-3 text-[13.5px] relative z-10">
-                {[
-                  ["Denumire completă", "PRODPEL S.R.L"],
-                  ["CUI", "RO15764987"],
-                  ["Nr. Reg. Comerțului", "J16/1418/24.03.2003"],
-                  ["Adresă sediu", "Str. Câmpului Nr. 2, Craiova, Dolj"],
-                  ["Telefon", "0742 488 300 / 0745 568 011"],
-                  ["Email", "prodpel24@gmail.com"], 
-                ].map(([label, value]) => (
-                  <div key={label} className="flex justify-between items-baseline gap-4 pb-3 border-b border-white/[0.08] last:border-b-0">
-                    <span className="text-white/50 flex-shrink-0 whitespace-nowrap">{label}</span>
-                    <span className="font-medium text-right">{value}</span>
-                  </div>
-                ))}
-              </div>
-            
-              {/* SEPARATOR */}
-              <div className="my-6 border-t border-white/[0.10] relative z-10" />
+              {/* IMAGINE */}
+              <div className="relative w-full h-80 flex-shrink-0 overflow-hidden">
+                <Image
+                  src="/images/33.webp"
+                  alt="Sty & Stv Carwash"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Gradient peste imagine spre card */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
 
-              {/* MESAJ BRAND — umple restul spațiului */}
-              <div className="relative z-10 mt-auto">
-                <div
-                  className="rounded-2xl p-5 border border-white/[0.10]"
-                  style={{ background: 'linear-gradient(135deg, rgba(227,6,19,0.08) 0%, rgba(255,255,255,0.03) 100%)' }}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-[#e30613]/15 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[#e30613]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                      </svg>
+                {/* Badge peste imagine */}
+                
+              </div>
+
+              {/* CONTINUT */}
+              <div className="p-10 flex flex-col flex-1">
+
+                {/* DATE FISCALE */}
+                <h3 className="text-[#e30613] font-bold tracking-[3px] text-sm mb-5 relative z-10">DATE FISCALE</h3>
+                <div className="space-y-3 text-[13.5px] relative z-10">
+                  {[
+                    ["Denumire completă", "PRODPEL S.R.L"],
+                    ["CUI", "RO15764987"],
+                    ["Nr. Reg. Comerțului", "J16/1418/24.03.2003"],
+                    ["Adresă sediu", "Str. Câmpului Nr. 2, Craiova, Dolj"],
+                    ["Telefon", "0742 488 300 / 0745 568 011"],
+                    ["Email", "prodpel24@gmail.com"],
+                  ].map(([label, value]) => (
+                    <div key={label} className="flex justify-between items-baseline gap-4 pb-3 border-b border-white/[0.08] last:border-b-0">
+                      <span className="text-white/50 flex-shrink-0 whitespace-nowrap">{label}</span>
+                      <span className="font-medium text-right">{value}</span>
                     </div>
-                    <div>
-                      <p className="text-white/90 text-[13px] font-medium leading-relaxed text-center">
-                        Mașina ta merită cel mai bun tratament.
-                      </p>
-                      <p className="text-white/45 text-[12px] mt-1 leading-relaxed text-center">
-                        Echipamente profesionale, produse premium și grijă pentru fiecare detaliu — la fiecare vizită.
-                      </p>
+                  ))}
+                </div>
+
+                {/* SEPARATOR */}
+                <div className="my-6 border-t border-white/[0.10] relative z-10" />
+
+                {/* MESAJ BRAND */}
+                <div className="relative z-10 mt-auto">
+                  <div
+                    className="rounded-2xl p-5 border border-white/[0.10]"
+                    style={{ background: 'linear-gradient(135deg, rgba(227,6,19,0.08) 0%, rgba(255,255,255,0.03) 100%)' }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 bg-[#e30613]/15 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[#e30613]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-white/90 text-[13px] font-medium leading-relaxed text-center">
+                          Mașina ta merită cel mai bun tratament.
+                        </p>
+                        <p className="text-white/45 text-[12px] mt-1 leading-relaxed text-center">
+                          Echipamente profesionale, produse premium și grijă pentru fiecare detaliu — la fiecare vizită.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
+              </div>
             </motion.div>
           </div>
 
